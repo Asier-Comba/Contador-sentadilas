@@ -1,0 +1,135 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.hidden { display: none !important; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  padding: 1.25rem 1.5rem;
+  background: #111;
+  border-bottom: 1px solid #222;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 0.78rem;
+  color: #666;
+  margin-top: 0.2rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+  max-width: 360px;
+}
+
+.start-screen .icon { font-size: 4rem; }
+.start-screen p { color: #aaa; font-size: 1rem; line-height: 1.5; }
+.start-screen small { color: #555; font-size: 0.8rem; }
+.error-text { color: #ff6b6b !important; }
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #333;
+  border-top-color: #00ff88;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.counter-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.camera-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid #222;
+}
+
+.camera-wrapper canvas { width: 100%; display: block; }
+
+.counter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 3rem;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+.counter-box.up   { background: #064e3b; }
+.counter-box.down { background: #1e3a8a; }
+
+.rep-number {
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.rep-label { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+
+.phase-badge {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+}
+.phase-badge.up   { background: #10b981; color: #fff; }
+.phase-badge.down { background: #3b82f6; color: #fff; }
+
+.angle { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
+
+.controls { display: flex; gap: 0.75rem; }
+
+.btn-primary, .btn-secondary, .btn-danger {
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover, .btn-secondary:hover, .btn-danger:hover { opacity: 0.85; }
+
+.btn-primary   { background: #10b981; color: #fff; }
+.btn-secondary { background: #222; color: #fff; border: 1px solid #444; }
+.btn-danger    { background: #dc2626; color: #fff; }
